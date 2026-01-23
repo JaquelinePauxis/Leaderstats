@@ -1,62 +1,33 @@
-# Roblox Leaderstats – Server-Side Score System
+🏆 Aula 05: Placar (Leaderstats) e Moedas
+O sistema de economia do jogo.
 
-## Overview
-This project implements a basic leaderstats system in Roblox Studio (Lua/Luau) using server-side scripting.
-It demonstrates how to initialize player data on join, store numeric values using IntValue, and expose them automatically through Roblox’s built-in leaderboard UI.
+📦 Conteúdo para o Repositório: [AULA 05] Placar e Moedas
 
----
+📄 Arquivos: Você precisará de 2 arquivos aqui: Leaderstats.lua e ColetarMoeda.lua.
 
-## Technical Goals
-- Implement leaderstats following Roblox engine conventions
-- Manage player-scoped data using Roblox Instances
-- Demonstrate server-authoritative score handling
-- Provide a minimal and extensible foundation for score-based systems
+📝 Texto para o README.md:
 
----
+# 🏆 Aula 05 - Placar e Coleta de Itens
 
-## Core Concepts Covered
-- Players.PlayerAdded event
-- Instance creation with Instance.new
-- Folder usage for leaderboard binding
-- Numeric state storage using IntValue
-- Runtime debugging with print()
-- Server execution via ServerScriptService
+## 📖 Sobre o Projeto
+Nesta aula, criamos o sistema de economia do jogo. Aprendemos sobre a pasta especial `leaderstats` (que mostra o placar no canto da tela) e como criar objetos interativos (moedas) que aumentam a pontuação do jogador.
 
----
-All logic runs on the server
-No client-side mutation of score values
-Uses Roblox’s automatic UI binding to leaderstats
+## 📂 Como Instalar
 
-##Implementation Flow
-Player joins the server
-A Folder named leaderstats is created and parented to the Player
-An IntValue (e.g. Points) is added to leaderstats
-Roblox detects leaderstats and renders it in the leaderboard UI
-Score updates are reflected in real time
+### Passo 1: O Placar (Leaderstats)
+1. No Roblox Studio, vá até **ServerScriptService**.
+2. Crie um **Script** e renomeie para `LeaderstatsScript`.
+3. Cole o código do arquivo `Leaderstats.lua`.
 
-## Example Use Cases
-Score and currency systems
-Educational projects
-Prototyping XP, kills, or progression systems
-Base structure for DataStore persistence
+### Passo 2: A Moeda
+1. Crie uma **Part** (ou Cilindro) amarela no Workspace.
+2. Certifique-se de que ela está **Anchored** (Ancorada).
+3. Dentro dessa peça, crie um **Script**.
+4. Cole o código do arquivo `ColetarMoeda.lua`.
 
-## Extensibility
-DataStoreService integration
-Event-driven score updates
-Multiple tracked stats (XP, Kills, Level)
-Anti-exploit validation
-Custom UI with ScreenGui
+⚠️ Dicas de Debug (Erros Comuns)
+O placar não aparece: Verifique se escreveu leaderstats tudo minúsculo no Script 1.
 
-## Requirements
-Roblox Studio
-Basic knowledge of Lua/Luau
-Understanding of client vs server execution
+Erro "Dinheiro is not a valid member": Verifique se o .Name do dinheiro é igual nos dois scripts (Maiúsculas importam!).
 
-## Notes
-This project intentionally avoids UI scripting and persistence to keep the focus on core engine behavior and clean server-side design.
-## Architecture
-
-```text
-ServerScriptService
-└── Leaderstats (Script)
-
+A moeda cai no infinito: Lembre-se de marcar a propriedade Anchored na moeda.
